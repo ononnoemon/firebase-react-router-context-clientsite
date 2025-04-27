@@ -55,9 +55,9 @@ export default function CoffeeCard({ coffee }) {
 
         {/* Right: Vertical Buttons */}
         <div className="card-actions flex flex-col items-end justify-center gap-2">
-          <button className="btn btn-sm btn-primary w-full">View</button>
-         <Link to={`/edit/${_id}`}> <button className="btn btn-sm btn-secondary w-full">Edit</button></Link>
-          <button onClick={()=>handleOnDelete(_id)} className="btn btn-sm btn-error w-full text-white" >Delete</button>
+          <button className="btn btn-sm btn-primary w-[65px]">View</button>
+         <Link to={`/edit/${_id}`}> <button className="btn btn-sm btn-secondary w-[65px]">Edit</button></Link>
+          <button onClick={()=>handleOnDelete(_id)} className="btn btn-sm btn-error w-[65px] text-white" >Delete</button>
         </div>
       </div>
     </div>

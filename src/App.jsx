@@ -2,7 +2,7 @@ import { createBrowserRouter, createRoutesFromElements,Route,RouterProvider } fr
 import Home from "./components/Home"
 import AddCoffee from "./components/AddCoffee"
 import View,{coffeeLoader} from "./components/View"
-import Edit from "./components/Edit"
+import Edit,{coffeeUpdate} from "./components/Edit"
 import MainLayout from "./assets/layouts/MainLayout"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
@@ -18,7 +18,7 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="signin" element={<SignIn />} />
         <Route path='view' element={<View />} loader={coffeeLoader} />
-        <Route path='edit/:id' element={<Edit />} loader={coffeeLoader} />
+        <Route path='edit/:id' element={<Edit />} loader={coffeeUpdate} />
             {/* 
             <Route path='about' element={<About />} loader={aboutLoader}/>
             <Route path='update/:id' element={<Update />} loader={updateLoader}/> */}
