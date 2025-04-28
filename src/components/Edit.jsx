@@ -3,7 +3,8 @@ import Swal from 'sweetalert2'
 import { useLoaderData } from 'react-router-dom'
 export default function Edit() {
      const coffes=useLoaderData()
-        console.log(coffes)
+     console.log(coffes)
+     console.log(coffes)
         const {_id, name, photo, category, supplier,test,detailts,quantity } = coffes;
 
     const handleOnSubmit=(e)=>{
