@@ -5,11 +5,7 @@ export default function Edit() {
      const coffes=useLoaderData()
         console.log(coffes)
         const {_id, name, photo, category, supplier,test,detailts,quantity } = coffes;
-    const handleOnChange=(e)=>{
-        //const fieldName=e.target.name
-      
-        
-    }
+
     const handleOnSubmit=(e)=>{
         e.preventDefault()
         const name=e.target.name.value
