@@ -19,9 +19,6 @@ function App() {
         <Route path="signin" element={<SignIn />} />
         <Route path='view' element={<View />} loader={coffeeLoader} />
         <Route path='edit/:id' element={<Edit />} loader={coffeeUpdate} />
-            {/* 
-            <Route path='about' element={<About />} loader={aboutLoader}/>
-            <Route path='update/:id' element={<Update />} loader={updateLoader}/> */}
       </Route>
     )
   )
