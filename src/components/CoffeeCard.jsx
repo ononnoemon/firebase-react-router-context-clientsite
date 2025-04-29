@@ -23,7 +23,6 @@ export default function CoffeeCard({ coffee }) {
             .then(result=>{
                 if(result.deletedCount>0){
                     Swal.fire({
-                        //position: "top-end",
                         icon: "success",
                         title: "Successfully Deleted",
                         showConfirmButton: false,
