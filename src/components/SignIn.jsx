@@ -8,16 +8,30 @@ export default function SignIn() {
     e.preventDefault()
     console.log('Sign In Clicked')
     const email=e.target.email.value
+    console.log(email)
     const password=e.target.password.value
     signIn(email,password)
     .then(result=>{
+      const lastSignInTime=result?.user?.metadata?.lastSignInTime
+      const loginInfo={email,lastSignInTime}
       console.log(result)
+      console.log(loginInfo)
+
+      fetch('http://localhost:3000/users',{
+        method:'patch',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(loginInfo)
+      })
+      .then(res=>res.json())
+      .then(result=>console.log('Signin updated ',result))
     })
   }
 
   return (
     <div className="h-screen">
-      <div className="h-9/10 flex flex-col justify-center items-center bg-gray-50">
+      <div onSubmit={handlOnSignIn} className="h-9/10 flex flex-col justify-center items-center bg-gray-50">
         <form className="bg-white w-1/3 mx-auto my-4 shadow-xl p-5">
           <h1 className="text-center text-3xl font-bold mb-7">Sign In</h1>
           <input
@@ -47,7 +61,7 @@ export default function SignIn() {
             </div>
           </div>
           <input
-            onClick={handlOnSignIn}
+           
             className="btn bg-primary text-white w-full my-2"
             type="submit"
             value="Sign In"

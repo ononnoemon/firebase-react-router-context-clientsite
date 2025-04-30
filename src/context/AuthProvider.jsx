@@ -18,7 +18,7 @@ export default function AuthProvider({children}) {
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
-    const userInfo={user,loading,createUser}
+    const userInfo={user,loading,createUser,signIn}
   return (
     <AuthContext.Provider value={userInfo} >
         {children}
