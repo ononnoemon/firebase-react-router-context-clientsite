@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import Swal from "sweetalert2";
 export default function Users() {
   const loadedData = useLoaderData();
   console.log(loadedData);
+  const [data,setData]=useState(loadedData)
   let sl = 1;
+  const handleOnDelete = (id) => {
+    console.log("Delete item id ", id);
+    fetch(`http://localhost:3000/users/${id}`, {
+      method: "delete",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.deletedCount > 0) {
+          Swal.fire({
+            icon: "success",
+            title: "Successfully Deleted",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          console.log(result)
+        }
+      });
+      const dataAfterDelete=data.filter(item=>item._id!==id)
+      setData(dataAfterDelete)
+  };
   return (
     <div>
       <div className="overflow-x-auto">
@@ -19,7 +40,7 @@ export default function Users() {
             </tr>
           </thead>
           <tbody>
-            {loadedData.map((item) => (
+            {data.map((item) => (
               <tr key={item._id}>
                 <th>{sl++}</th>
                 <td>{item.userName}</td>
@@ -28,10 +49,15 @@ export default function Users() {
                 <td>
                   <button className="btn btn-primary ">View</button>
                   <button className="btn btn-secondary mx-2 ">Update</button>
-                  <button className="btn btn-accent text-white ">Delete</button>
+                  <button
+                    onClick={() => handleOnDelete(item._id)}
+                    className="btn btn-accent text-white "
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
-            ))} 
+            ))}
           </tbody>
         </table>
       </div>
