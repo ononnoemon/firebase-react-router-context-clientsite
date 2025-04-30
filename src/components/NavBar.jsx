@@ -14,6 +14,7 @@ export default function NavBar() {
             <NavLink to={'view'}><button className="btn btn-active btn-primary">View Coffee</button> </NavLink>
             <NavLink to={'signup'}><button className="btn btn-active btn-primary">Sign Up</button> </NavLink>
             <NavLink to={'signin'}><button className="btn btn-active btn-primary">Sign In</button> </NavLink>
+            <NavLink to={'users'}><button className="btn btn-active btn-primary">Users</button> </NavLink>
           </ul>
         </div>
       </div>
