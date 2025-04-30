@@ -22,13 +22,13 @@ export default function Users() {
             {loadedData.map((item) => (
               <tr key={item._id}>
                 <th>{sl++}</th>
-                <td>{item.displayName}</td>
+                <td>{item.userName}</td>
                 <td>{item.email}</td>
-                <td>Littel, Schaden and Vandervort</td>
+                <td>{item.creationTime}</td>
                 <td>
                   <button className="btn btn-primary ">View</button>
                   <button className="btn btn-secondary mx-2 ">Update</button>
-                  <button className="btn btn-accent ">Delete</button>
+                  <button className="btn btn-accent text-white ">Delete</button>
                 </td>
               </tr>
             ))} 

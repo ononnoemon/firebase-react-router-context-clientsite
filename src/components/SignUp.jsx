@@ -31,7 +31,9 @@ export default function SignUp() {
 
     createUser(email, password).then((userCredential) => {
       // Signed up
-      const user = userCredential.user;
+    //  const user = userCredential.user;
+    const creationTime=userCredential.user.metadata.creationTime
+    const user = {userName,email,creationTime}
       fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
