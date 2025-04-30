@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle, FaFacebookF, FaGithub } from "react-icons/fa";
+import { AuthContext } from "../context/AuthProvider";
 export default function SignIn() {
+  const {signIn}=useContext(AuthContext)
+  const handlOnSignIn=(e)=>{
+    e.preventDefault()
+    console.log('Sign In Clicked')
+    const email=e.target.email.value
+    const password=e.target.password.value
+    signIn(email,password)
+    .then(result=>{
+      console.log(result)
+    })
+  }
+
   return (
     <div className="h-screen">
       <div className="h-9/10 flex flex-col justify-center items-center bg-gray-50">
@@ -34,9 +47,10 @@ export default function SignIn() {
             </div>
           </div>
           <input
+            onClick={handlOnSignIn}
             className="btn bg-primary text-white w-full my-2"
             type="submit"
-            value="Sign Up"
+            value="Sign In"
           />
           <div className="flex justify-center items-center space-x-2">
             <hr className="w-1/4 border-gray-300 " />{" "}
@@ -54,7 +68,7 @@ export default function SignIn() {
             </button>
           </p>
           <p>
-            <button className="flex w-64 items-center rounded space-x-1 mx-auto my-2 bg-gray-200 py-2 px-4 font-bold">
+            <button  className="flex w-64 items-center rounded space-x-1 mx-auto my-2 bg-gray-200 py-2 px-4 font-bold">
               <FaGithub /> <span>Sign Up With Github</span>
             </button>
           </p>
