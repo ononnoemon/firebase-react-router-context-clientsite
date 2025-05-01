@@ -18,7 +18,7 @@ export default function SignIn() {
       console.log(loginInfo)
 
       fetch('http://localhost:3000/users',{
-        method:'patch',
+        method:'put',
         headers:{
           'content-type':'application/json'
         },

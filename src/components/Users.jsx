@@ -36,6 +36,7 @@ export default function Users() {
               <th>Name</th>
               <th>Email</th>
               <th>Crated Time</th>
+              <th>Last SignIn Time</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -45,6 +46,7 @@ export default function Users() {
                 <th>{sl++}</th>
                 <td>{item.userName}</td>
                 <td>{item.email}</td>
+                <td>{item.lastSignInTime}</td>
                 <td>{item.creationTime}</td>
                 <td>
                   <button className="btn btn-primary ">View</button>
