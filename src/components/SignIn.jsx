@@ -6,7 +6,7 @@ export default function SignIn() {
   const {signIn}=useContext(AuthContext)
   const handlOnSignIn=(e)=>{
     e.preventDefault()
-    console.log('Sign In Clicked')
+    // console.log('Sign In Clicked')
     const email=e.target.email.value
     console.log(email)
     const password=e.target.password.value
