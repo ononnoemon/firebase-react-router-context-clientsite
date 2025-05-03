@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 export default function Users() {
   const loadedData = useLoaderData();
   console.log(loadedData);
+  console.log(loadedData);
   
   const [data,setData]=useState(loadedData)
   let sl = 1;
