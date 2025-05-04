@@ -8,7 +8,7 @@ export default function SignIn() {
     e.preventDefault()
     // console.log('Sign In Clicked')
     const email=e.target.email.value
-    console.log(email)
+    // console.log(email)
     const password=e.target.password.value
     signIn(email,password)
     .then(result=>{
