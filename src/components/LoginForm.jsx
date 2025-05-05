@@ -6,7 +6,7 @@ export const LoginForm = () => {
         e.preventDefault()
         const email=e.target.email.value
         const pass=e.target.password.value
-        console.log(email)
+        // console.log(email)
         createUserWithEmailAndPassword(auth,email,pass)
         .then((userCredential) => {
             // Signed up 
