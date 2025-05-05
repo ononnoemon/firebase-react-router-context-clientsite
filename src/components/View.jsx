@@ -5,7 +5,7 @@ import CoffeeCard from './CoffeeCard'
 
 export default function View() {
     const coffes=useLoaderData()
-  //  console.log(coffes)
+   console.log(coffes)
   return (
     <div>
         <h1>Hot Hot Coffee</h1>
